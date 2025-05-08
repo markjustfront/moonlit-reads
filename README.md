@@ -1,3 +1,7 @@
+## Project Structure
+
+The Moonlit Reads project is organized to support a Laravel 11 application with Vue.js for dynamic frontend interactions, Axios for API calls, Tailwind CSS for styling, and MySQL via Laravel Sail. The structure is modular for easy modification, with separate controllers for database and non-database operations, and all dependencies are pre-installed or local for offline use.
+
 moonlit-reads/
 ├── app/
 │   ├── Http/
