@@ -2,6 +2,7 @@ moonlit-reads/
 ├── app/
 │   ├── Http/
 │   │   ├── Controllers/
+│   │   │   ├── Auth/ (from laravel/ui)
 │   │   │   ├── BookController.php
 │   │   │   ├── Crud/
 │   │   │   │   └── BookCrudController.php
@@ -33,8 +34,6 @@ moonlit-reads/
 │   │   │   └── ...
 │   │   ├── books/
 │   │   │   ├── index.blade.php
-│   │   │   ├── create.blade.php
-│   │   │   ├── edit.blade.php
 │   │   │   └── show.blade.php
 │   │   ├── layouts/
 │   │   │   └── app.blade.php

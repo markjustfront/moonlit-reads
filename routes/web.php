@@ -11,7 +11,7 @@ Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::get('/books', [BookCrudController::class, 'index'])->name('books.index');
-    Route::get('/books/all', [BookCrudController::class, 'all'])->name('books.all'); // For Axios
+    Route::get('/books/all', [BookCrudController::class, 'all'])->name('books.all');
     Route::post('/books', [BookCrudController::class, 'store'])->name('books.store');
     Route::get('/books/{book}', [BookCrudController::class, 'show'])->name('books.show');
     Route::put('/books/{book}', [BookCrudController::class, 'update'])->name('books.update');
