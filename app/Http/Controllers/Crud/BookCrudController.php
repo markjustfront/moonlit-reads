@@ -9,13 +9,12 @@ class BookCrudController extends Controller
 {
     public function index()
     {
-        $books = Book::all();
-        return view('books.index', compact('books'));
+        return view('books.index');
     }
 
-    public function create()
+    public function all()
     {
-        return view('books.create');
+        return response()->json(Book::all());
     }
 
     public function store(Request $request)
@@ -28,18 +27,13 @@ class BookCrudController extends Controller
             'category' => 'required|string|max:255',
         ]);
 
-        Book::create($request->all());
-        return redirect()->route('books.index')->with('success', 'Book added.');
+        $book = Book::create($request->all());
+        return response()->json(['message' => 'Book added.', 'book' => $book], 201);
     }
 
     public function show(Book $book)
     {
         return view('books.show', compact('book'));
-    }
-
-    public function edit(Book $book)
-    {
-        return view('books.edit', compact('book'));
     }
 
     public function update(Request $request, Book $book)
@@ -53,12 +47,12 @@ class BookCrudController extends Controller
         ]);
 
         $book->update($request->all());
-        return redirect()->route('books.index')->with('success', 'Book updated.');
+        return response()->json(['message' => 'Book updated.', 'book' => $book]);
     }
 
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index')->with('success', 'Book deleted.');
+        return response()->json(['message' => 'Book deleted.']);
     }
 }
